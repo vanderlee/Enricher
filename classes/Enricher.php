@@ -1,7 +1,5 @@
 <?php
 
-//@todo testsuite phpunit
-
 /**
  * Enrich HTML with some attributes and styles
  */
