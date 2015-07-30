@@ -9,6 +9,8 @@ class Enricher {
 	private $backfill_styles = array();
 	private $overwrite_attributes = array();
 	private $overwrite_styles = array();
+    private $add_classes = array();
+    private $remove_classes = array();
 	
 	public function reset() {
 		$this->selectors = array();
@@ -68,7 +70,27 @@ class Enricher {
 		foreach ($styles as $name => $value) {
 			$this->overwriteStyle($name, $value);
 		}
-	}	
+	}
+
+    public function addClass($class) {
+        $this->add_classes[] = $class;
+    }
+
+    public function addClasses($classes) {
+        foreach ($classes as $class) {
+            $this->addClass($class);
+        }
+    }
+
+    public function removeClass($class) {
+        $this->remove_classes[] = $class;
+    }
+
+    public function removeClasses($classes) {
+        foreach ($classes as $class) {
+            $this->removeClass($class);
+        }
+    }
 	
 	/**
 	 * Enrich
