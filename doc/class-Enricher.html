@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Enricher | Enricher</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+		</div>
+
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Enricher.html">Enricher</a></li>
+			</ul>
+
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-Enricher_autoloader.html">Enricher_autoloader</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Enricher</h1>
+
+
+	<div class="description">
+	<p>Enrich HTML with some attributes and styles</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+			<b>Located at</b> <a href="source-class-Enricher.html#3-355" title="Go to source code">Enricher.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="reset" id="_reset">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_reset">#</a>
+		<code><a href="source-class-Enricher.html#15-26" title="Go to source code">reset</a>( )</code>
+
+		<div class="description short">
+			<p>Reset all configured options to default (empty)</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Reset all configured options to default (empty)</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addSelector" id="_addSelector">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addSelector">#</a>
+		<code><a href="source-class-Enricher.html#28-44" title="Go to source code">addSelector</a>( <span>string <var>$selector</var></span> )</code>
+
+		<div class="description short">
+			<p>Add a selector to specify which elements may be selected.
+Select elements by specifying the tag. i.e. <code>div</code>.
+Select by class by specifying the class. i.e. <code>div.blue</code>.
+Select by id by specifying the id. i.e. <code>div#body</code>.
+Select by attribute by specifying the attribute. i.e. <code>a[href]</code>.
+Combine these to form selectors. i.e. <code>a[href][target].blue</code>.
+You may specify multiple selectors by separating them using a comma (,).</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add a selector to specify which elements may be selected.
+Select elements by specifying the tag. i.e. <code>div</code>.
+Select by class by specifying the class. i.e. <code>div.blue</code>.
+Select by id by specifying the id. i.e. <code>div#body</code>.
+Select by attribute by specifying the attribute. i.e. <code>a[href]</code>.
+Combine these to form selectors. i.e. <code>a[href][target].blue</code>.
+You may specify multiple selectors by separating them using a comma (,).</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$selector</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addAttribute" id="_addAttribute">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addAttribute">#</a>
+		<code><a href="source-class-Enricher.html#46-53" title="Go to source code">addAttribute</a>( <span>string <var>$name</var></span>, <span>string <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Add an attribute to add to the selected elements if missing.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add an attribute to add to the selected elements if missing.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd></dd>
+					<dt><var>$value</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addAttributes" id="_addAttributes">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addAttributes">#</a>
+		<code><a href="source-class-Enricher.html#55-63" title="Go to source code">addAttributes</a>( <span>array <var>$attributes</var></span> )</code>
+
+		<div class="description short">
+			<p>Add attributes to add to the selected elements if missing.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add attributes to add to the selected elements if missing.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$attributes</var></dt>
+					<dd>Hashmap of name => value</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="overwriteAttribute" id="_overwriteAttribute">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_overwriteAttribute">#</a>
+		<code><a href="source-class-Enricher.html#65-72" title="Go to source code">overwriteAttribute</a>( <span>string <var>$name</var></span>, <span>string <var>$value</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Add an attribute to overwrite in the selected elements.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add an attribute to overwrite in the selected elements.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd></dd>
+					<dt><var>$value</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="overwriteAttributes" id="_overwriteAttributes">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_overwriteAttributes">#</a>
+		<code><a href="source-class-Enricher.html#74-82" title="Go to source code">overwriteAttributes</a>( <span>array <var>$attributes</var></span> )</code>
+
+		<div class="description short">
+			<p>Add attributes to overwrite in the selected elements.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add attributes to overwrite in the selected elements.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$attributes</var></dt>
+					<dd>Hashmap of name => value</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="removeAttribute" id="_removeAttribute">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_removeAttribute">#</a>
+		<code><a href="source-class-Enricher.html#84-90" title="Go to source code">removeAttribute</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>Add an attribute to remove from the selected elements.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add an attribute to remove from the selected elements.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="removeAttributes" id="_removeAttributes">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_removeAttributes">#</a>
+		<code><a href="source-class-Enricher.html#92-100" title="Go to source code">removeAttributes</a>( <span>array <var>$names</var></span> )</code>
+
+		<div class="description short">
+			<p>Add attributes to remove from the selected elements.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add attributes to remove from the selected elements.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$names</var></dt>
+					<dd>Array of attribute names</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addStyle" id="_addStyle">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addStyle">#</a>
+		<code><a href="source-class-Enricher.html#102-109" title="Go to source code">addStyle</a>( <span>string <var>$name</var></span>, <span>string <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Add style rule to add to the selected elements if missing.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add style rule to add to the selected elements if missing.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd></dd>
+					<dt><var>$value</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addStyles" id="_addStyles">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addStyles">#</a>
+		<code><a href="source-class-Enricher.html#111-119" title="Go to source code">addStyles</a>( <span>array <var>$styles</var></span> )</code>
+
+		<div class="description short">
+			<p>Add style rules to add to the selected elements if missing.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add style rules to add to the selected elements if missing.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$styles</var></dt>
+					<dd>Hashmap of name => value</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="overwriteStyle" id="_overwriteStyle">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_overwriteStyle">#</a>
+		<code><a href="source-class-Enricher.html#121-128" title="Go to source code">overwriteStyle</a>( <span>string <var>$name</var></span>, <span>string <var>$value</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Add a style rule to overwrite for the selected elements.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add a style rule to overwrite for the selected elements.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>the rulename</dd>
+					<dt><var>$value</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="overwriteStyles" id="_overwriteStyles">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_overwriteStyles">#</a>
+		<code><a href="source-class-Enricher.html#130-138" title="Go to source code">overwriteStyles</a>( <span>array <var>$styles</var></span> )</code>
+
+		<div class="description short">
+			<p>Add style rules to overwrite for the selected elements.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add style rules to overwrite for the selected elements.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$styles</var></dt>
+					<dd>hashmap of name => value</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="removeStyle" id="_removeStyle">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_removeStyle">#</a>
+		<code><a href="source-class-Enricher.html#140-146" title="Go to source code">removeStyle</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>Add a style rule to remove from the selected elements.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add a style rule to remove from the selected elements.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="removeStyles" id="_removeStyles">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_removeStyles">#</a>
+		<code><a href="source-class-Enricher.html#148-156" title="Go to source code">removeStyles</a>( <span>array <var>$names</var></span> )</code>
+
+		<div class="description short">
+			<p>Add style rules to remove from the selected elements.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add style rules to remove from the selected elements.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$names</var></dt>
+					<dd>array of rule names</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addClass" id="_addClass">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addClass">#</a>
+		<code><a href="source-class-Enricher.html#158-164" title="Go to source code">addClass</a>( <span>string <var>$class</var></span> )</code>
+
+		<div class="description short">
+			<p>Add a class to add to the selected elements.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add a class to add to the selected elements.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$class</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addClasses" id="_addClasses">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addClasses">#</a>
+		<code><a href="source-class-Enricher.html#166-174" title="Go to source code">addClasses</a>( <span>array <var>$classes</var></span> )</code>
+
+		<div class="description short">
+			<p>Add classes to add to the selected elements.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add classes to add to the selected elements.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$classes</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="removeClass" id="_removeClass">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_removeClass">#</a>
+		<code><a href="source-class-Enricher.html#176-182" title="Go to source code">removeClass</a>( <span>string <var>$class</var></span> )</code>
+
+		<div class="description short">
+			<p>Add a class to remove from the selected elements.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add a class to remove from the selected elements.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$class</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="removeClasses" id="_removeClasses">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_removeClasses">#</a>
+		<code><a href="source-class-Enricher.html#184-192" title="Go to source code">removeClasses</a>( <span>array <var>$classes</var></span> )</code>
+
+		<div class="description short">
+			<p>Add classes to remove from the selected elements.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add classes to remove from the selected elements.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$classes</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="enrich" id="_enrich">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_enrich">#</a>
+		<code><a href="source-class-Enricher.html#194-354" title="Go to source code">enrich</a>( <span>string <var>$html</var></span> )</code>
+
+		<div class="description short">
+			<p>Enrich the selected elementes in the HTML according the specified
+modifications for style, class and attributes.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Enrich the selected elementes in the HTML according the specified
+modifications for style, class and attributes.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$html</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Enricher API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
