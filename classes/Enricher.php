@@ -287,7 +287,8 @@ class Enricher {
 						return $tag_match[0];
 					} else {
 						$classes = preg_split('~\s+~', $attributes['class'], PREG_SPLIT_NO_EMPTY);
-                        if (!empty(array_diff($has_classes, $classes))) {
+                        $diff = array_diff($has_classes, $classes);
+                        if (!empty($diff)) {
                             $tag_cache[$tag_match[0]] = $tag_match[0];
                             return $tag_match[0];
                         }
