@@ -1,7 +1,14 @@
 Enricher
 ========
-Version 1.0
+Version 0.1 (incomplete unittests and readme)
 
+[![Build Status](https://travis-ci.org/vanderlee/Enricher.svg?branch=master)](https://travis-ci.org/vanderlee/Enricher)
+
+Copyright &copy; 2011-2015 Martijn van der Lee.
+MIT Open Source license applies.
+
+Introduction
+------------
 Basic but fast HTML attribute and style modifier for PHP.
 Similar to Emogrifier with only basic selectors, but added attribute support.
 It's primary purpose is to change HTML for use in emails, but it is not in any
@@ -30,17 +37,23 @@ Enricher will do the same but faster.
 
 Documentation
 =============
-TODO
+TODO: Intro
+TODO: Examples
 
 Constructor
 -----------
-TODO: Not yet implemented (and should we?)
+TODO: Not yet implemented
 
 Methods
 -------
-TODO: List all methods
+TODO: List all methods in short form
+TODO: Link to generated PHPDoc
 
-### `addSelector($selector)`
+### `reset()`
+TODO
+
+### `addSelector($selector)`/`addSelectors($selectors)`
+TODO
 
 ### `enrich($html)`
 TODO
@@ -55,6 +68,6 @@ Add a selector to specify which elements may be selected.
 *	Combine these to form selectors. i.e. `a[href][target].blue`.
 *	You may specify multiple selectors by separating them using a comma (,).
 
-PHPDoc
-------
-TODO: Link to generated PHPDoc
+Changes
+-------
+Will
