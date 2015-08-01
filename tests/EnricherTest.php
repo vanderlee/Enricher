@@ -18,16 +18,6 @@ class EnricherTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers Enricher::addAttribute
-	 */
-	public function testAddAttributeWithoutPrevious() {
-		$this->object->addSelector('p');
-        $this->object->addAttribute('title', 'yes');
-
-		$this->assertEquals('<p title="yes"></p>', $this->object->enrich('<p></p>'));
-	}
-
-	/**
 	 * @covers Enricher::addSelector
 	 */
 	public function testAddSelectorElement() {
@@ -35,6 +25,26 @@ class EnricherTest extends PHPUnit_Framework_TestCase {
         $this->object->addAttribute('title', 'ok');
 
 		$this->assertEquals('<b title="ok"></b><i></i>', $this->object->enrich('<b></b><i></i>'));
+	}
+
+	/**
+	 * @covers Enricher::addSelector
+	 */
+	public function testAddSelectorElementEmptyXml() {
+		$this->object->addSelector('hr');
+        $this->object->addAttribute('title', 'ok');
+
+		$this->assertEquals('<hr title="ok"/>', $this->object->enrich('<hr/>'));
+	}
+
+	/**
+	 * @covers Enricher::addSelector
+	 */
+	public function testAddSelectorElementEmptyHtml() {
+		$this->object->addSelector('hr');
+        $this->object->addAttribute('title', 'ok');
+
+		$this->assertEquals('<hr title="ok">', $this->object->enrich('<hr>'));
 	}
 
 	/**
@@ -65,6 +75,16 @@ class EnricherTest extends PHPUnit_Framework_TestCase {
         $this->object->addAttribute('title', 'ok');
 
 		$this->assertEquals('<b id="a" title="ok"></b><b class="a"></b>', $this->object->enrich('<b id="a"></b><b class="a"></b>'));
+	}
+
+	/**
+	 * @covers Enricher::addAttribute
+	 */
+	public function testAddAttributeWithoutPrevious() {
+		$this->object->addSelector('p');
+        $this->object->addAttribute('title', 'yes');
+
+		$this->assertEquals('<p title="yes"></p>', $this->object->enrich('<p></p>'));
 	}
 
 	/**
