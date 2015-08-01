@@ -44,6 +44,16 @@ class Enricher {
 	}
 
     /**
+     * Add selectors to specify which elements may be selected.
+     * @param array $selectors
+     */
+    public function addSelectors($selectors) {
+        foreach ($selectors as $selector) {
+            $this->addSelector($selector);
+        }
+    }
+
+    /**
      * Add an attribute to add to the selected elements if missing.
      * @param string $name
      * @param string $value
