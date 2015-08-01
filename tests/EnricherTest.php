@@ -2,6 +2,8 @@
 
 class EnricherTest extends PHPUnit_Framework_TestCase {
 
+    const LF = "\n";
+
 	/**
 	 * @var Enricher
 	 */
@@ -121,6 +123,96 @@ class EnricherTest extends PHPUnit_Framework_TestCase {
         $this->object->overwriteAttribute('title', 'yes');
 
 		$this->assertEquals('<p title="yes"></p>', $this->object->enrich('<p title="no"></p>'));
+	}
+
+	/**
+	 * @covers Enricher::addStyle
+	 */
+	public function testAddStyleWithoutPrevious() {
+		$this->object->addSelector('p');
+        $this->object->addStyle('color', 'blue');
+
+		$this->assertEquals('<p style="color:blue"></p>', $this->object->enrich('<p></p>'));
+	}
+
+	/**
+	 * @covers Enricher::addStyle
+	 */
+	public function testAddStyleWithPrevious() {
+		$this->object->addSelector('p');
+        $this->object->addStyle('color', 'blue');
+
+		$this->assertEquals('<p style="color:red"></p>', $this->object->enrich('<p style="color:red"></p>'));
+	}
+
+	/**
+	 * @covers Enricher::addStyle
+	 */
+	public function testAddStyleWithPreviousWithOther() {
+		$this->object->addSelector('p');
+        $this->object->addStyle('color', 'blue');
+
+		$this->assertEquals('<p style="background:red;color:blue"></p>', $this->object->enrich('<p style="background:red"></p>'));
+	}
+
+	/**
+	 * @covers Enricher::addStyle
+	 */
+	public function testAddStyleWithPreviousWithWhitespacing() {
+		$this->object->addSelector('p');
+        $this->object->addStyle('color', 'blue');
+
+		$this->assertEquals('<p style="background:red;color:blue"></p>', $this->object->enrich('<p style="background    :'.self::LF.'red"></p>'));
+	}
+
+	/**
+	 * @covers Enricher::overwriteStyle
+	 */
+	public function testOverwriteStyleWithoutPrevious() {
+		$this->object->addSelector('p');
+        $this->object->overwriteStyle('color', 'blue');
+
+		$this->assertEquals('<p style="color:blue"></p>', $this->object->enrich('<p></p>'));
+	}
+
+	/**
+	 * @covers Enricher::overwriteStyle
+	 */
+	public function testOverwriteStyleWithPrevious() {
+		$this->object->addSelector('p');
+        $this->object->overwriteStyle('color', 'blue');
+
+		$this->assertEquals('<p style="color:blue"></p>', $this->object->enrich('<p style="color:red"></p>'));
+	}
+
+	/**
+	 * @covers Enricher::removeStyle
+	 */
+	public function testRemoveStyleWithoutPrevious() {
+		$this->object->addSelector('p');
+        $this->object->removeStyle('color');
+
+		$this->assertEquals('<p></p>', $this->object->enrich('<p></p>'));
+	}
+
+	/**
+	 * @covers Enricher::removeStyle
+	 */
+	public function testRemoveStyleWithPrevious() {
+		$this->object->addSelector('p');
+        $this->object->removeStyle('color', 'blue');
+
+		$this->assertEquals('<p></p>', $this->object->enrich('<p style="color:red"></p>'));
+	}
+
+	/**
+	 * @covers Enricher::removeStyle
+	 */
+	public function testRemoveStyleWithOther() {
+		$this->object->addSelector('p');
+        $this->object->removeStyle('color', 'blue');
+
+		$this->assertEquals('<p style="background:red"></p>', $this->object->enrich('<p style="background:red;color:green"></p>'));
 	}
 
 	/**
