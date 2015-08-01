@@ -300,6 +300,7 @@ class Enricher {
 
 				// style (http://www.w3.org/TR/2011/REC-CSS2-20110607/grammar.html)
 				if (!empty($backfill_styles) || !empty($overwrite_styles)) {
+                    // get old
 					$styles = array();
 					if (isset($attributes['style'])) {				
 						$declaration_matches = array();
@@ -309,23 +310,29 @@ class Enricher {
 						}
 					}
 
-					// backfill, overwrite and delete empties
+					// combine
 					$styles = array_filter(array_merge($styles + $backfill_styles, $overwrite_styles), 'strlen');
-				
-					// put the styles back together again
-					$declarations = array();
-					foreach ($styles as $property => $expr) {
-						$declarations[] = $property.':'.$expr;
-					}
-					$attributes['style'] = join(';', $declarations);			
+
+                    // set new
+                    if (empty($styles)) {
+                        unset($attributes['style']);
+                    } else {
+                        $declarations = array();
+                        foreach ($styles as $property => $expr) {
+                            $declarations[] = $property.':'.$expr;
+                        }
+                        $attributes['style'] = join(';', $declarations);
+                    }
 				}		
 
                 // class
                 if (!empty($add_classes) || !empty($remove_classes)) {
+                    // get old
                     if (!isset($classes)) {
                         $classes = isset($attributes['class']) ? preg_split('~\s+~', $attributes['class'], PREG_SPLIT_NO_EMPTY) : array();
                     }
 
+					// combine
                     if ($add_classes) {
                         $classes = array_unique(array_merge($classes, $add_classes));
                     }
@@ -333,6 +340,7 @@ class Enricher {
                         $classes = array_diff($classes, $remove_classes);
                     }
                     
+                    // set new
                     if (empty($classes)) {
                         unset($attributes['class']);
                     } else {
