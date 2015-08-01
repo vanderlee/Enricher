@@ -4,7 +4,7 @@ Version 0.1 (incomplete unittests and readme)
 
 [![Build Status](https://travis-ci.org/vanderlee/Enricher.svg?branch=master)](https://travis-ci.org/vanderlee/Enricher)
 
-Copyright &copy; 2011-2015 Martijn van der Lee.
+Copyright &copy; 2015 Martijn van der Lee.
 MIT Open Source license applies.
 
 Introduction
@@ -39,6 +39,15 @@ Documentation
 =============
 TODO: Intro
 TODO: Examples
+
+Installation
+------------
+Get the latest version here: https://github.com/vanderlee/Enricher
+
+Enricher requires atleast PHP 5.3 or HHVM.
+
+Either include the autoloader (for forwards compatibility) or `include` the
+`Enricher.php` file directly or through your own autoloader.
 
 Constructor
 -----------
