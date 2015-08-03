@@ -1,6 +1,6 @@
 Enricher
 ========
-Version 0.1 (incomplete unittests and readme)
+Version 1.0
 
 [![Build Status](https://travis-ci.org/vanderlee/Enricher.svg?branch=master)](https://travis-ci.org/vanderlee/Enricher)
 
@@ -9,6 +9,9 @@ MIT Open Source license applies.
 
 Introduction
 ------------
+Add (if missing), overwrite and remove classes, style rules and attributes by
+using selectors.
+
 Basic but fast HTML attribute and style modifier for PHP.
 Similar to Emogrifier with only basic selectors, but added attribute support.
 It's primary purpose is to change HTML for use in emails, but it is not in any
@@ -35,11 +38,13 @@ Enricher's functionality and purpose has significant overlap with Emogrifier
 In general; if you need complex selectors, use Emogrifier. In other cases
 Enricher will do the same but faster.
 
+Future plans
+------------
+*	Support `*` as an "all-elements"  wildcard.
+*	Support more complex selectors.
+
 Documentation
 =============
-TODO: Intro
-TODO: Examples
-
 Installation
 ------------
 Get the latest version here: https://github.com/vanderlee/Enricher
@@ -51,25 +56,15 @@ Either include the autoloader (for forwards compatibility) or `include` the
 
 Constructor
 -----------
-TODO: Not yet implemented
+The constructor does nothing.
 
 Methods
 -------
-TODO: List all methods in short form
-TODO: Link to generated PHPDoc
-
 ### `reset()`
-TODO
+Clear out all selectors, attribute, style and class settings.
 
 ### `addSelector($selector)`/`addSelectors($selectors)`
-TODO
-
-### `enrich($html)`
-TODO
-
-Selectors
----------
-Add a selector to specify which elements may be selected.
+Add a selectors to specify which elements may be selected.
 *	Select elements by specifying the tag. i.e. `div`.
 *	Select by class by specifying the class. i.e. `div.blue`.
 *	Select by id by specifying the id. i.e. `div#body`.
@@ -77,6 +72,35 @@ Add a selector to specify which elements may be selected.
 *	Combine these to form selectors. i.e. `a[href][target].blue`.
 *	You may specify multiple selectors by separating them using a comma (,).
 
-Changes
+### `addAttribute($name, $value)`/`addAttributes($attributes)`
+### `overwriteAttribute($name, $value)`/`overwriteAttributes($attributes)`
+### `removeAttribute($name)`/`removeAttributes($names)`
+Add (if missing), overwrite or remove attributes.
+
+### `addStyle($name, $value)`/`addStyles($styles)`
+### `overwriteStyle($name, $value)`/`overwriteStyles($styles)`
+### `removeStyle($name)`/`removeStyles($names)`
+Add (if missing), overwrite or remove style rules.
+
+### `addClass($name)`/`addClasses($names)`
+### `removeClass($name)`/`removeClasses($names)`
+Add or remove classes.
+
+### `enrich($html)`
+Enrich the HTML according the the settings.
+If settings are missing, an empty HTML will be returned.
+
+Example
 -------
-Will
+```php
+require_once 'Enricher.php';
+
+$enricher = new Enricher();
+
+$enricher->addSelector('a[href]');
+
+$enricher->addStyle('color', 'black');
+$enricher->addAttribute('title', 'I'm a hyperlink');
+
+echo $enricher->enrich($html);
+```
