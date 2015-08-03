@@ -45,6 +45,9 @@ Future plans
 
 Documentation
 =============
+Here you will find basic instructions to get you started.
+You can find complete PHPDoc in the /doc directory.
+
 Installation
 ------------
 Get the latest version here: https://github.com/vanderlee/Enricher
