@@ -160,8 +160,8 @@ class Enricher {
      * @param array $names array of rule names
      */
     public function removeStyles($names) {
-		foreach ($names as $name => $value) {
-			$this->removeStyle($name, $value);
+		foreach ($names as $name) {
+			$this->removeStyle($name);
 		}
     }
 
