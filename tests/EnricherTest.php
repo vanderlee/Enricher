@@ -146,6 +146,39 @@ class EnricherTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
+	 * @covers Enricher::overwriteAttributes
+	 */
+	public function testOverwriteAttributes() {
+		$this->object->addSelector('p');
+        $this->object->overwriteAttributes(array(
+			'title'	=> 'yes',
+			'lang'	=> 'nl',
+		));
+
+		$this->assertEquals('<p title="yes" lang="nl"></p>', $this->object->enrich('<p title="no" lang="en"></p>'));
+	}
+
+	/**
+	 * @covers Enricher::removeAttribute
+	 */
+	public function testRemoveAttributeWithoutPrevious() {
+		$this->object->addSelector('p');
+        $this->object->removeAttribute('title');
+
+		$this->assertEquals('<p></p>', $this->object->enrich('<p></p>'));
+	}
+
+	/**
+	 * @covers Enricher::removeAttribute
+	 */
+	public function testRemoveAttributeWithPrevious() {
+		$this->object->addSelector('p');
+        $this->object->removeAttribute('title');
+
+		$this->assertEquals('<p></p>', $this->object->enrich('<p title="no"></p>'));
+	}
+
+	/**
 	 * @covers Enricher::addStyle
 	 */
 	public function testAddStyleWithoutPrevious() {
@@ -206,6 +239,19 @@ class EnricherTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
+	 * @covers Enricher::overwriteStyles
+	 */
+	public function testOverwriteStyles() {
+		$this->object->addSelector('p');
+        $this->object->overwriteStyles(array(
+			'color'	=> 'blue',
+			'float'	=> 'left',
+		));
+
+		$this->assertEquals('<p style="float:left;color:blue"></p>', $this->object->enrich('<p style="float:right;color:red"></p>'));
+	}
+
+	/**
 	 * @covers Enricher::removeStyle
 	 */
 	public function testRemoveStyleWithoutPrevious() {
@@ -230,9 +276,19 @@ class EnricherTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function testRemoveStyleWithOther() {
 		$this->object->addSelector('p');
-        $this->object->removeStyle('color', 'blue');
+        $this->object->removeStyle('color');
 
 		$this->assertEquals('<p style="background:red"></p>', $this->object->enrich('<p style="background:red;color:green"></p>'));
+	}
+
+	/**
+	 * @covers Enricher::removeStyles
+	 */
+	public function testRemoveStyles() {
+		$this->object->addSelector('p');
+        $this->object->removeStyles(array('color', 'float'));
+
+		$this->assertEquals('<p style="background:red"></p>', $this->object->enrich('<p style="float:left;background:red;color:green"></p>'));
 	}
 
 	/**
@@ -263,6 +319,16 @@ class EnricherTest extends PHPUnit_Framework_TestCase {
         $this->object->addClass('old');
 
 		$this->assertEquals('<p class="old"></p>', $this->object->enrich('<p class="old"></p>'));
+	}
+
+	/**
+	 * @covers Enricher::addClasses
+	 */
+	public function testAddClasses() {
+		$this->object->addSelector('p');
+        $this->object->addClasses(array('a', 'b'));
+
+		$this->assertEquals('<p class="c a b"></p>', $this->object->enrich('<p class="c"></p>'));
 	}
 
 	/**
@@ -305,6 +371,31 @@ class EnricherTest extends PHPUnit_Framework_TestCase {
         $this->object->addClass('old');
 
 		$this->assertEquals('<p></p>', $this->object->enrich('<p class="old"></p>'));
+	}
+
+	/**
+	 * @covers Enricher::removeClasses
+	 */
+	public function testRemoveClasses() {
+		$this->object->addSelector('p');
+        $this->object->removeClasses(array('a', 'b'));
+
+		$this->assertEquals('<p class="c"></p>', $this->object->enrich('<p class="a b c"></p>'));
+	}
+
+	/**
+	 * @covers Enricher::reset
+	 */
+	public function testReset() {
+		$this->object->addSelector('b');
+        $this->object->addClass('new');
+        $this->object->addAttribute('title', 'yes');
+        $this->object->addStyle('title', 'yes');
+		$this->object->reset();
+		$this->object->addSelector('i');
+        $this->object->addClass('reset');
+
+		$this->assertEquals('<b></b><i class="reset"></i>', $this->object->enrich('<b></b><i></i>'));
 	}
 
 }
