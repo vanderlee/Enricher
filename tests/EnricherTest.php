@@ -78,6 +78,16 @@ class EnricherTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
+	 * @covers Enricher::addSelectors
+	 */
+	public function testAddSelectors() {
+		$this->object->addSelectors(array('b', 'i'));
+        $this->object->addAttribute('title', 'yes');
+
+		$this->assertEquals('<b title="yes"></b><p></p><i title="yes"></i>', $this->object->enrich('<b></b><p></p><i></i>'));
+	}
+
+	/**
 	 * @covers Enricher::addAttribute
 	 */
 	public function testAddAttributeWithoutPrevious() {
