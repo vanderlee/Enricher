@@ -296,7 +296,7 @@ class Enricher {
 						$tag_cache[$tag_match[0]] = $tag_match[0];
 						return $tag_match[0];
 					} else {
-						$classes = preg_split('~\s+~', $attributes['class'], PREG_SPLIT_NO_EMPTY);
+						$classes = preg_split('~\s+~', $attributes['class'], -1, PREG_SPLIT_NO_EMPTY);
                         $diff = array_diff($has_classes, $classes);
                         if (!empty($diff)) {
                             $tag_cache[$tag_match[0]] = $tag_match[0];
@@ -339,9 +339,9 @@ class Enricher {
                 if (!empty($add_classes) || !empty($remove_classes)) {
                     // get old
                     if (!isset($classes)) {
-                        $classes = isset($attributes['class']) ? preg_split('~\s+~', $attributes['class'], PREG_SPLIT_NO_EMPTY) : array();
+                        $classes = isset($attributes['class']) ? preg_split('~\s+~', $attributes['class'], -1, PREG_SPLIT_NO_EMPTY) : array();
                     }
-
+					
 					// combine
                     if ($add_classes) {
                         $classes = array_unique(array_merge($classes, $add_classes));
