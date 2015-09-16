@@ -247,7 +247,7 @@ class Enricher {
             $selector = empty($selector) ? '[^\s/>]+' : preg_quote($selector);
 
 			// remainder = tag
-			$pattern = '~(<'.$selector.'\b)([^/>]*)(/?>)~mis';
+			$pattern = '~(<' . $selector . '\\b)((?:(?!/?' . '>).)*)(/?' . '>)~mis';
 			$backfill_attributes = $this->backfill_attributes;
 			$backfill_styles = $this->backfill_styles;
 			$overwrite_attributes = $this->overwrite_attributes;

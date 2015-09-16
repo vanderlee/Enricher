@@ -78,6 +78,16 @@ class EnricherTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
+	 * @covers Enricher::addSelector
+	 */
+	public function testAddSelectorSlash() {
+		$this->object->addSelector('a');
+        $this->object->addAttribute('title', 'ok');
+
+		$this->assertEquals('<a href="http://example.com" title="ok">Link</a>', $this->object->enrich('<a href="http://example.com">Link</a>'));
+	}
+
+	/**
 	 * @covers Enricher::addSelectors
 	 */
 	public function testAddSelectors() {
