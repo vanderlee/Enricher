@@ -1,6 +1,6 @@
 Enricher
 ========
-Version 1.0.1
+Version 1.0.2
 
 [![Build Status](https://travis-ci.org/vanderlee/Enricher.svg?branch=master)](https://travis-ci.org/vanderlee/Enricher)
 
