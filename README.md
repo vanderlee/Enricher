@@ -29,14 +29,26 @@ Comparison to Emogrifier
 ------------------------
 Enricher's functionality and purpose has significant overlap with Emogrifier
 (https://github.com/jjriv/emogrifier), but is different in a few key ways.
-*	Emogrifier allows "path" selectors, i.e. `#list a.item`. Enricher does not.
-*	Emogrifier allows pseudoselectors such as ":nth-child". Enricher does not.
-*	Enricher lets you add and remove attributes. Emogrifier does not.
-*	Enricher lets you add and remove classes. Emogrifier does not.
-*	Enricher lets you add, overwrite and remove in one run. Emogrifier does not.
-*	Enricher is faster than Emogrifier.
-In general; if you need complex selectors, use Emogrifier. In other cases
-Enricher will do the same but faster.
+
+*	Both have full unittests.
+*	Both support element selectors. i.e. `a`
+*	Both support ID selectors. i.e. `#logo`.
+*	Both support class selectors. i.e. `table.mobile`.
+*	Both support attribute selectors. i.e. `a[name]`.
+*	Both support composite selectors. i.e. `a[name].mobile`.
+*	(+) Enricher is ___much___ faster than Emogrifier. Upto several orders of magnitude.
+*	(+) Enricher supports adding and removing attributes.
+*	(+) Enricher supports adding and removing classes.
+*	(+) Enricher supports adding, overwriting and removing in one go.
+*	(-) Emogrifier supports "path" selectors. i.e. `#list a.item`.
+*	(-) Emogrifier supports pseudoselectors. i.e. `:nth-child`.
+*	(-) Emogrifier supports attribute value selectors. i.e. `[name=anchor]`.
+*	(/) Emogrifier requires valid HTML, which may or may not be an issue,
+	depending on usage scenario.
+
+In general; if you need complex selectors such as paths, use Emogrifier.
+If you need class or attribute changing or complex CSS rewriting, use Enricher.
+In other cases Enricher will do the same job, but faster.
 
 Future plans
 ------------
