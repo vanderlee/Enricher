@@ -4,13 +4,13 @@ Version 1.0.1
 
 [![Build Status](https://travis-ci.org/vanderlee/Enricher.svg?branch=master)](https://travis-ci.org/vanderlee/Enricher)
 
-Copyright &copy; 2015 Martijn van der Lee.
+Copyright &copy; 2016 Martijn van der Lee.
 MIT Open Source license applies.
 
 Introduction
 ------------
-Add (if missing), overwrite and remove classes, style rules and attributes by
-using selectors.
+Backfill (add only if missing), overwrite and remove classes, style rules and
+attributes in HTML by using selectors.
 
 Basic but fast HTML attribute and style modifier for PHP.
 Similar to Emogrifier with only basic selectors, but added attribute support.
@@ -36,7 +36,8 @@ Enricher's functionality and purpose has significant overlap with Emogrifier
 *	Both support class selectors. i.e. `table.mobile`.
 *	Both support attribute selectors. i.e. `a[name]`.
 *	Both support composite selectors. i.e. `a[name].mobile`.
-*	(+) Enricher is ___much___ faster than Emogrifier. Upto several orders of magnitude.
+*	(+) Enricher is ___much___ faster than Emogrifier. Upto several orders of
+	magnitude.
 *	(+) Enricher supports adding and removing attributes.
 *	(+) Enricher supports adding and removing classes.
 *	(+) Enricher supports adding, overwriting and removing in one go.
